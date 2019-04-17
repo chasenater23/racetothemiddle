@@ -27,7 +27,7 @@ public class Player1 : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         tag = "Player";
-        name = "Player";
+        name = "Player2";
         controller = GetComponent<Controller2D>();
 
         gravity = -(2 * jumpHeight) / Mathf.Pow(timeToJumpApex, 2);
@@ -46,7 +46,7 @@ public class Player1 : MonoBehaviour
     {
 
         moveInput = Input.GetAxis("Horizontal");
-        Debug.Log(moveInput);
+        //Debug.Log(moveInput);
 
         if (rb)
             rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);

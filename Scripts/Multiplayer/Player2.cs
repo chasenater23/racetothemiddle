@@ -46,7 +46,7 @@ public class Player2 : MonoBehaviour
     void Update()
     {
         moveInput = Input.GetAxis("HorizontalP1");
-        Debug.Log(moveInput);
+        //Debug.Log(moveInput);
 
         if (rb)
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);

@@ -13,7 +13,7 @@ public class Brick : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.name.Equals("Green Team"))
+        if (col.gameObject.name.Equals("Player1WalkRight 1m"))
         {
             Invoke("DropPlatform", 0.5f);
             Destroy(gameObject, 2f);
@@ -21,6 +21,6 @@ public class Brick : MonoBehaviour
     }
     void DropPlatform()
     {
-        rb.isKinematic = false;
+        rb.isKinematic = true;
     }
 }

@@ -8,7 +8,7 @@ public class Reset : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D kill)
     {
-        Debug.Log("Hello World");
+        //Debug.Log("Hello World");
         {
             if (kill.gameObject.tag == "Player")
             {

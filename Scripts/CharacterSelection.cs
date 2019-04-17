@@ -10,13 +10,23 @@ public class CharacterSelection : MonoBehaviour
     [SerializeField] public GameObject[] actualcharacterList;
     [SerializeField] private int index;
     public int World;
-	
-	private void Start ()
+    public static CharacterSelection instance;
+
+    Points pointScript;
+
+    void Awake()
+    {
+        instance = this;
+    }
+
+    private void Start ()
     {
         World = 1;
         index = PlayerPrefs.GetInt("CharacterSelected");
 
         characterList = new GameObject[transform.childCount];
+
+        pointScript = GameObject.FindGameObjectWithTag("Points").GetComponent<Points>();
 
         // Fill the array with out models
         for (int i = 0; i < transform.childCount; i++)
@@ -76,14 +86,23 @@ public class CharacterSelection : MonoBehaviour
         if (World == 1)
         {
             SceneManager.LoadScene("World1");
+            pointScript.World1 = true;
         }
         if (World == 2)
         {
             SceneManager.LoadScene("World2");
+            pointScript.World2 = true;
         }
         if (World == 3)
         {
             SceneManager.LoadScene("World3 (undone)");
+            pointScript.World3 = true;
         }
+    }
+
+    public void QuitButton()
+    {
+        Application.Quit();
+        SceneManager.LoadScene("MainMenu");
     }
 }

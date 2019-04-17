@@ -17,4 +17,14 @@ public class MainMenu : MonoBehaviour
         //Quit button will close the application
         Application.Quit();
     }
+
+    public void HowToPlayGameBtn()
+    {
+        SceneManager.LoadScene("HowToPlay");
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
